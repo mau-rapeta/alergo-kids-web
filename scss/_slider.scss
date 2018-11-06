@@ -1,0 +1,130 @@
+.slider {
+    height: 100vh;
+    min-height: 80rem;
+    max-height: 90rem;
+
+    .carousel {
+        position: relative;
+        height: 100%;
+
+        &-indicators {
+            display: none;
+        }
+
+        &-control {
+            display: none;
+        }
+
+        &-inner {
+            height: inherit;
+
+            .item {
+                height: inherit;
+                transition-property: opacity;
+                background-position: center;
+                background-size: cover;
+
+                &:first-child {
+                    background-image: url(../img/slide01.jpg);
+                }
+                &:nth-child(2) {
+                    background-image: url(../img/slide02.jpg);
+                }
+                &:last-child {
+                    background-image: url(../img/slide03.jpg);
+                }
+
+                .scroll-box {
+                    @include center-align-transform;
+                    top: 90%;
+                    left: 50%;
+
+                    .scroll {
+                        height: 10rem;
+                    }
+                }
+            }
+            .item,
+            .active.left,
+            .active.right {
+                opacity: 0;
+            }
+
+            .active,
+            .next.left,
+            .prev.right {
+                opacity: 1;
+            }
+
+            .next,
+            .prev,
+            .active.left,
+            .active.right {
+                left: 0;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+    }
+
+    &__heading {
+        @include center-align-transform;
+        top: 50%;
+        left: 30%;
+        color: $color-red;
+        font-weight: 700;
+        font-size: 5rem;
+        letter-spacing: 0.5rem;
+        line-height: 1.3;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .slider {
+        min-height: initial;
+        max-height: initial;
+        height: 100vh;
+
+        .carousel {
+
+            &-inner {
+
+                .item {
+
+                    &:first-child {
+                        background-image: url(../img/slidemovil-01.jpg);
+                    }
+                    &:nth-child(2) {
+                        background-image: url(../img/slidemovil-02.jpg);
+                    }
+                    &:last-child {
+                        background-image: url(../img/slidemovil-03.jpg);
+                    }
+                }
+            }
+        }
+
+        &__heading {
+            left: 45%;
+        }
+
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .slider {
+
+        &__heading {
+            left: 50%;
+            font-size: 4rem;
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .slider {
+
+        &__heading {
+            font-size: 3rem;
+        }
+    }
+}

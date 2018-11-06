@@ -1,0 +1,119 @@
+.buscador {
+    height: 100vh;
+    min-height: 80rem;
+    max-height: 90rem;
+    background-image: url(../img/buscador-background.jpg);
+    background-size: cover;
+    background-position: right;
+
+    @include center-align-frame;
+
+    &__container {
+        @include center-align-transform;
+        top: 50%;
+        left: 50%;
+        color: $color-red;
+        width: 100%;
+    }
+
+    &__heading {
+        font-weight: 600;
+        font-size: 4rem;
+        margin-bottom: 2.5rem;
+    }
+
+    &__text {
+        font-weight: 600;
+        font-size: 1.8rem;
+        margin-bottom: 4rem;
+    }
+
+    &__select-box {
+        width: 100%;
+        height: 4rem;
+        display: flex;
+    }
+
+    &__select {
+        background-color: transparent;
+        border: 1px solid $color-red;
+        font-size: 2rem;
+        font-weight: 600;
+        width: 30%;
+        text-align: center;
+        height: 4rem;
+        padding: 0.5rem 1.5rem;
+
+        &:not(:last-child){
+            margin-right: 3rem;
+        }
+
+        option {
+            color: #fff;
+            background-color: $color-red;
+            border-bottom: 1px solid #fff;
+        }
+    }
+
+    &__submit {
+        width: 3.5rem;
+        background-color: $color-red;
+        box-sizing: content-box;
+        padding: 0.5rem;
+    }
+
+    &__map {
+        background-image: url(../img/buscador-mapa.svg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .buscador {
+        min-height: initial;
+        max-height: initial;
+        height: initial;
+
+        &__container {
+            position: initial;
+            transform: none;
+            padding: 11rem 1rem 5rem 1rem;
+        }
+
+        &__select-box {
+            height: initial;
+            flex-flow: column;
+        }
+
+        &__select {
+            width: 70%;
+            margin-right: 0;
+            margin-bottom: 1rem;
+        }
+
+        &__submit {
+            width: 70%;
+            height: 3.5rem;
+            padding: 0.5rem 0;
+        }
+
+        &__map {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .buscador {
+
+        &__select {
+            width: 100%;
+        }
+
+        &__submit {
+            width: 100%;
+        }
+    }
+} 

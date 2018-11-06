@@ -1,0 +1,122 @@
+.navigation {
+    z-index: 300;
+    width: 100vw;
+    position: fixed;
+    background-color: $color-white;
+
+    &__container {
+        height: 10rem;
+        display: flex;
+        align-items: center;
+        justify-content: unset;
+    }
+
+    &__elements {
+        width: 87%;
+
+        .nav {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            li {
+
+                a {
+                    font-weight: 600;
+                    padding: 0.5rem 1.5rem;
+
+                    &:hover,
+                    &:focus {
+                        color: #fff;
+                        background-color: $color-red;
+                    }
+                }
+
+                &.active a {
+                    background-color: $color-red;
+                    color: #fff;
+                }
+            }
+
+            .link-logo:hover,
+            .link-logo:focus {
+                background-color: transparent;
+            }
+        }
+    }
+
+    &__logo {
+        height: 12rem;
+        display: inline-block;
+        margin-top: 1.5rem;
+        //margin-right: 2rem;
+        background-color: $color-white;
+        padding: 2rem 5rem;
+        clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+        border-radius: 1rem;
+    }
+
+    &__social {
+        width: 6%;
+        margin-left: 3rem;
+
+        .social {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            margin: 0;
+
+            &-item {
+                width: 2.5rem;
+                transition: .2s transform ease-out;
+
+                &:hover, 
+                &:focus {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+
+    &__btn {
+        width: 5rem;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .navigation {
+
+        &__elements {
+
+            .nav {
+                justify-content: left;
+            }
+        }
+
+        &__logo {
+            margin: 0;
+            padding: 0;
+            height: 7rem;
+            -webkit-clip-path: none;
+            clip-path: none;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .navigation {
+
+        &__container {
+            height: 8rem;
+        }
+
+        &__logo {
+            height: 6rem;
+        }
+
+        &__btn {
+            width: 4.5rem;
+        }
+    }
+}

@@ -1,0 +1,42 @@
+.navMobile {
+    background-color: rgba($color-white, .8);
+    z-index: 200;
+    width: 100%;
+    left: -100%;
+    height: calc(100% - 10rem);
+    margin-top: 10rem;
+    position: fixed;
+    overflow: scroll;
+    
+    ul {
+        width: 100%;
+        list-style: none;
+
+        li {
+            display: block;
+            position: relative;
+            padding: .5rem 1rem;
+
+            a{
+                font-size: 2rem;
+                text-align: center;
+                color: #337ab7;
+                font-weight: 400;
+
+                &:hover,
+                &:focus {
+                    color: $color-white;
+                    background-color: $color-red;
+                }
+
+            }    
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .navMobile {
+        height: calc(100% - 8rem);
+        margin-top: 8rem;
+    }
+}
